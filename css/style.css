@@ -33,6 +33,12 @@ body {
     transform-origin: center center;
     -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
     transform: skew(30deg) scaleY(1) translate(0, 0);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.stripe:nth-child(2n+1):hover::before {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: skew(0deg) scaleY(1) translate(0, 0);
 }
 
 #block1 {
