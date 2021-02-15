@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+}
+
+div {
+    font-family: 'Lato', sans-serif;
+    font-size: xx-large;
+    color: #FFFFFF;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#it {
+    background-color: #244F75;
+}
+
+#a {
+    background-color: #60BFBF;
+}
+
+#ca {
+    background-color: #8C4B7E;
+}
+
+#de {
+    background-color: #F8BB44;
+}
+
+#my {
+    background-color: #F24B4B;
+}
