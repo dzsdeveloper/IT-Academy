@@ -10,26 +10,49 @@ body {
     display: flex;
     justify-content: flex-start;
     position: relative;
+    overflow: hidden;
 }
+
+/* Añado la parte correspondiente a las animaciones del nivel 3 a cada bloque */
 
 #block1 {
     background-color: #244F75;
+    -webkit-animation-name: block1;
+    animation-name: block1;
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
 }
 
 #block2 {
     background-color: #60BFBF;
+    -webkit-animation-name: block2;
+    animation-name: block2;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 #block3 {
     background-color: #8C4B7E;
+    -webkit-animation-name: block3;
+    animation-name: block3;
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 
 #block4 {
     background-color: #F8BB44;
+    -webkit-animation-name: block4;
+    animation-name: block4;
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 #block5 {
     background-color: #F24B4B;
+    -webkit-animation-name: block5;
+    animation-name: block5;
+    -webkit-animation-delay: 0.5s;
+    animation-delay: 0.5s;
 }
 
 .stripe {
@@ -44,13 +67,17 @@ body {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    /* Exercici 4 (nivel 3) donde asigno el tipo de movimiento de la animacion (cubic-beizer())  */
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    animation-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 /*
 A continuación está la parte de codigo del Ejercicio 2:
-Al final he añadido la misma transición del ejercicio 3 para que,
-al dejar de hacer "hover", tenga una transición al volver 
-al estado del ejercicio 2
 */
 
 .stripe::before {
@@ -69,7 +96,7 @@ al estado del ejercicio 2
 }
 
 /*
-A continuación está la parte de codigo del Ejercicio 3:
+A continuación está la parte de codigo del nivel 3:
 Realizo la transición al situar el cursor sobre los elementos con la clase .stripe
 */
 
@@ -79,4 +106,56 @@ Realizo la transición al situar el cursor sobre los elementos con la clase .str
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
     -webkit-transform: skew(0deg) scale(3) translate(0, 0);
     transform: skew(0deg) scaleY(1) translate(0, 0);
+}
+
+/*
+keyframes de cada bloque. Aprovecho la "position: relative" de los divs
+para crear los desplazamientos usando su propia posición relativa.
+Podría haber usado transform: translate3d(), pero de la manera que he realizado
+el ejercicio me parece más simple de hacer y de entender. Funcionan de ambas maneras.
+*/
+
+@keyframes block1 {
+    from {
+        left: -20vw;
+    }
+    to {
+        left: 0;
+    }
+}
+
+@keyframes block2 {
+    from {
+        bottom: -100vh;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes block3 {
+    from {
+        top: -100vh;
+    }
+    to {
+        top: 0;
+    }
+}
+
+@keyframes block4 {
+    from {
+        bottom: -100vh;
+    }
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes block5 {
+    from {
+        right: -20vw;
+    }
+    to {
+        right: 0;
+    }
 }
