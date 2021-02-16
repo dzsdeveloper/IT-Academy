@@ -1,44 +1,16 @@
+/* Añado margin 0 para que no existan margenes en todo el borde del body */
+
 body {
     margin: 0;
 }
+
+/* A continuación está la parte de codigo del Ejercicio 1 */
 
 #container {
     display: flex;
     justify-content: flex-start;
     overflow: hidden;
     position: relative;
-}
-
-.stripe {
-    position: relative;
-    font-family: 'Lato', sans-serif;
-    font-size: 3.5vw;
-    color: #FFFFFF;
-    width: 20%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.stripe:nth-child(2n+1)::before {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: 0.1;
-    -webkit-transform-origin: center center;
-    transform-origin: center center;
-    -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
-    transform: skew(30deg) scaleY(1) translate(0, 0);
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.stripe:nth-child(2n+1):hover::before {
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    transform: skew(0deg) scaleY(1) translate(0, 0);
 }
 
 #block1 {
@@ -59,4 +31,48 @@ body {
 
 #block5 {
     background-color: #F24B4B;
+}
+
+.stripe {
+    position: relative;
+    font-family: 'Lato', sans-serif;
+    font-size: 3.5vw;
+    color: #FFFFFF;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*
+A continuación está la parte de codigo del Ejercicio 2:
+Al final he añadido la misma transición del ejercicio 3 para que,
+al dejar de hacer "hover", tenga una transición al volver 
+al estado del ejercicio 2
+*/
+
+.stripe:nth-child(2n+1)::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.1;
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: skew(30deg) scaleY(1) translate(0, 0);
+    transform: skew(30deg) scaleY(1) translate(0, 0);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/*
+A continuación está la parte de codigo del Ejercicio 3:
+Realizo la transición al situar el cursor sobre los elementos con la clase .stripe
+*/
+
+.stripe:nth-child(2n+1):hover::before {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform: skew(0deg) scaleY(1) translate(0, 0);
 }
