@@ -1,6 +1,8 @@
 
         <?php
-        // NIVEL 1
+        /////////////////////////////////////////////////////////////////////
+        //////////////////////////    NIVEL 1    ////////////////////////////
+        /////////////////////////////////////////////////////////////////////
 
         /* EXERCICI 1
         Defineix una variable de cada tipus: integer,double,string i boolean. Després, imprimeix-les per pantalla. */
@@ -33,5 +35,25 @@
 
         define('NOMBRE', 'Daniel Zaplana'); // defino constante
         echo NOMBRE; // imprimo constante por pantalla
+
+        /////////////////////////////////////////////////////////////////////
+        //////////////////////////    NIVEL 2    ////////////////////////////
+        /////////////////////////////////////////////////////////////////////
+
+        /* EXERCICI 1
+        Crea dos arrays, un que inclogui 5 integers, i un altre que inclogui 3 integers. */
+
+        $arrayIntegers1 = array(1, 2, 3, 4, 5);
+        $arrayIntegers2 = array(1, 2, 3);
+
+        /* EXERCICI 2
+        Afegeix un valor més a l'array que conté 3 integers. */
+
+        array_push($arrayIntegers2, 4);
+
+        /* EXERCICI 3
+        Mescla els dos arrays i imprimeix el tamany de l'array resultant per pantalla. */
+        $arrayMezcla = array_merge($arrayIntegers1, $arrayIntegers2);
+        echo count($arrayMezcla);
 
         ?>
