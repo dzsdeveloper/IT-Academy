@@ -6,12 +6,14 @@
 
 /* EXERCICI 1
 Programa la funció "resta" que, donats dos paràmetres ens retorni la resta dels dos números. */
+echo "<h3>N1 - EXERCICI 1: </h3>";
 
 function resta($num1, $num2)
 {
     return $num1 - $num2;
 }
 
+echo '5 - 3 = ' . resta(5, 3);
 
 /* EXERCICI 2
 Programa una lògica que, donat un número qualsevol(per exemple,la teva edat) ens digui si és parell
