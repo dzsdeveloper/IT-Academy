@@ -126,8 +126,72 @@ Implementa un programa que permeti afegir càlculs a un total de compres d'aques
 Per exemple, que si comprem:
 2 xocolates, 1 de xiclets i 1 de carmels, tinguem un programa que permeti anar afegint els subtotals a un total,
 tal que així: funció(2 xocolates) + funció(1 de xiclets) + funció(1 de carmels) = 2+0.5+1.5 */
+echo "<h3>N3 - EXERCICI 2: </h3>";
+
+/* Defino las constantes con los precios ya que no serán modificadas en la ejecución
+del programa y de esta forma es mas sencillo modificarlos */
+define('XOCOLATE', 1);
+define('XICLET', 0.5);
+define('CARMEL', 1.5);
 
 
+/* Utilizo un array para preparar el programa para una futura ampliación de productos.
+Se me ha ocurrido que es una forma más "bonita" de hacerlo :-P */
+$arrayProductos = [
+    "xocolates" => 2,
+    "xiclets" => 1,
+    "carmels" => 1
+];
 
+function xocolates($cantidad)
+{
+    return XOCOLATE * $cantidad;
+}
+
+function xiclets($cantidad)
+{
+    return XICLET * $cantidad;
+}
+
+function carmels($cantidad)
+{
+    return CARMEL * $cantidad;
+}
+
+function calcular_total($arrayProd)
+{
+    $total = 0.0;
+    // Utilizo un operador nula para que sea más abreviado.
+    $total += $arrayProd['xocolates'] ?? 0;
+    $total += $arrayProd['xiclets'] ?? 0;
+    $total += $arrayProd['carmels'] ?? 0;
+    return $total;
+}
+
+echo 'El total es: ' . calcular_total($arrayProductos);
+
+
+/* EXERCICI 3
+Implementa la criba d'Eratóstenes dins d'una funció, 
+de tal forma que poguem invocar la funció per a un número concret. */
+echo "<h3>N3 - EXERCICI 3: </h3>";
+
+function criba_eratostenes($num)
+{
+    $todos = array();
+    $primo = 1;
+    echo 2;
+    for ($i = 3; $i <= $num; $i += 2) {
+        if (!in_array($i, $todos)) {
+            echo "<br>", $i;
+            $primo++;
+            for ($j = $i; $j <= ($num / $i); $j++) {
+                array_push($todos, $i * $j);
+            }
+        }
+    }
+}
+
+criba_eratostenes(30);
 
 ?>
