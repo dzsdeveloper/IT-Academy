@@ -1,0 +1,22 @@
+SELECT * FROM glasses AS g
+INNER JOIN eyeglasses AS e ON g.eyeglasses_id = e.id
+WHERE e.color_left = 'clear';
+
+
+
+UPDATE eyeglasses
+SET color_left = 'dark', color_right = 'dark'
+WHERE id = 3;
+
+
+
+SELECT DISTINCT color_left, color_right FROM eyeglasses;
+
+
+
+SELECT count(nif) AS 'Total de proveedores' FROM providers;
+
+
+
+#Al ser RESTRICT, no me permite eliminarlo ya que está asociado con un registro de providers
+DELETE FROM address WHERE id=1;
