@@ -19,5 +19,11 @@ SELECT count(*) AS 'Total de provincias' FROM provinces;
 
 
 
+SELECT concat(first_name, " ", second_name) AS 'Repartidores con pedidos finalizados'
+FROM employees e
+INNER JOIN delivery d ON e.id = d.employees_id;
+
+
+
 #Al ser RESTRICT, no me permite eliminarlo ya que está asociado con un registro de localidad
 DELETE FROM provinces WHERE id=1;

@@ -44,7 +44,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (1,'C/ Pepito, 3',1,'08080',1),(2,'Av. Palo, 8',2,'54541',2),(3,'C/ Pesebre, 1',3,'42185',4),(4,'C/ Papasan',4,'25452',3);
+INSERT INTO `address` VALUES (1,'C/ Pepito, 3',1,'08080',1),(2,'Av. Palo, 8',2,'01220',2),(3,'C/ Pesebre, 1',3,'42185',4),(4,'C/ Papasan',4,'25452',3);
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -99,6 +99,66 @@ LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
 INSERT INTO `customers` VALUES (1,'Daniel','Zaplana','666666661',1),(2,'Manuela','Gomez','+33655555555',2);
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `delivery`
+--
+
+DROP TABLE IF EXISTS `delivery`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `delivery` (
+  `orders_id` int NOT NULL,
+  `employees_id` int NOT NULL,
+  `date_delivery` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`orders_id`,`employees_id`),
+  KEY `fk_orders_has_employees_employees1_idx` (`employees_id`),
+  KEY `fk_orders_has_employees_orders1_idx` (`orders_id`),
+  CONSTRAINT `fk_orders_has_employees_employees1` FOREIGN KEY (`employees_id`) REFERENCES `employees` (`id`),
+  CONSTRAINT `fk_orders_has_employees_orders1` FOREIGN KEY (`orders_id`) REFERENCES `orders` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `delivery`
+--
+
+LOCK TABLES `delivery` WRITE;
+/*!40000 ALTER TABLE `delivery` DISABLE KEYS */;
+INSERT INTO `delivery` VALUES (2,1,'2021-03-12 16:53:03');
+/*!40000 ALTER TABLE `delivery` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `employees`
+--
+
+DROP TABLE IF EXISTS `employees`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `employees` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(45) NOT NULL,
+  `second_name` varchar(80) NOT NULL,
+  `nif` varchar(45) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `job` enum('cuiner','repartidor') NOT NULL,
+  `shops_id` int NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_employees_shops1_idx` (`shops_id`),
+  CONSTRAINT `fk_employees_shops1` FOREIGN KEY (`shops_id`) REFERENCES `shops` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `employees`
+--
+
+LOCK TABLES `employees` WRITE;
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` VALUES (1,'Pepito','Palote','55522214T','651663222','repartidor',2),(2,'Galo','Gulita','45782145G','666666666','cuiner',2),(3,'Ka','Katua','45214587L','652114235','repartidor',1),(4,'Manuel','Pozo','82415365F','621111444','cuiner',1);
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -278,4 +338,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-03-11 15:58:45
+-- Dump completed on 2021-03-12 17:13:19
