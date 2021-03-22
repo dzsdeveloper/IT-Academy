@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "4de50637-db2d-40e0-8405-f3a2a1cd2fb2",
+		"name": "N1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost/IT-Academy/N1/public/Daniel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"IT-Academy",
+						"N1",
+						"public",
+						"Daniel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
