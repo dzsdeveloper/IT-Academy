@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\PaisController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::apiResource('paises', PaisController::class)->parameters([
+    'paises' => 'pais'
+]);
+
+Route::apiResource('paises/{pais}/departamentos', DepartamentoController::class);
