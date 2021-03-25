@@ -1,0 +1,194 @@
+{
+	"id": "a15db3f6-9375-4ab7-913d-10afd6867b02",
+	"name": "N3",
+	"timestamp": "2021-03-25T16:03:16.045Z",
+	"collection_id": "c24029e1-1ff5-483b-a654-59c3b7e62e18",
+	"folder_id": 0,
+	"environment_id": "fc446edd-d638-463f-b560-e547c1e63256",
+	"totalPass": 0,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "75d8aebf-b126-4cf0-94f1-afc3f5d322b3",
+			"name": "Paises GET",
+			"url": "http://127.0.0.1:8000/paises/1",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				21
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "2ba1c26c-acea-41f3-8e34-3d09906dfa80",
+			"name": "Paises POST",
+			"url": "http://127.0.0.1:8000/paises",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f947f79f-296e-4f78-b548-bde73687097a",
+			"name": "Paises PUT",
+			"url": "http://127.0.0.1:8000/paises/1",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				16
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "44b0c5fb-3bb8-4bfd-bb06-74c21684c0e1",
+			"name": "Paises DELETE",
+			"url": "http://127.0.0.1:8000/paises/1/",
+			"time": 12,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				12
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "01c0e36b-2539-4c37-bbd0-3b8fb061bb71",
+			"name": "Departamentos GET",
+			"url": "http://127.0.0.1:8000/paises/1/departamentos",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				18
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4019842b-85c8-43b7-a6b6-6a040e8f2a85",
+			"name": "Departamentos POST",
+			"url": "http://127.0.0.1:8000/paises/1/departamentos",
+			"time": 11,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				11
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "8a758668-a4b8-49d9-b4a0-f4cb0103fc41",
+			"name": "Departamentos PUT",
+			"url": "http://127.0.0.1:8000/paises/1/departamentos/1",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				14
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fa8dc742-2324-469e-a689-df997a9b827d",
+			"name": "Departamentos DELETE",
+			"url": "http://127.0.0.1:8000/paises/1/departamentos/1",
+			"time": 28,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				28
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 134,
+	"collection": {
+		"requests": [
+			{
+				"id": "75d8aebf-b126-4cf0-94f1-afc3f5d322b3",
+				"method": "GET"
+			},
+			{
+				"id": "2ba1c26c-acea-41f3-8e34-3d09906dfa80",
+				"method": "POST"
+			},
+			{
+				"id": "f947f79f-296e-4f78-b548-bde73687097a",
+				"method": "PUT"
+			},
+			{
+				"id": "44b0c5fb-3bb8-4bfd-bb06-74c21684c0e1",
+				"method": "DELETE"
+			},
+			{
+				"id": "01c0e36b-2539-4c37-bbd0-3b8fb061bb71",
+				"method": "GET"
+			},
+			{
+				"id": "4019842b-85c8-43b7-a6b6-6a040e8f2a85",
+				"method": "POST"
+			},
+			{
+				"id": "8a758668-a4b8-49d9-b4a0-f4cb0103fc41",
+				"method": "PUT"
+			},
+			{
+				"id": "fa8dc742-2324-469e-a689-df997a9b827d",
+				"method": "DELETE"
+			}
+		]
+	}
+}
